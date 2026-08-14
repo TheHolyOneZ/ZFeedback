@@ -1,0 +1,145 @@
+.crow {
+  position: relative;
+  margin-bottom: 2.25rem;
+}
+
+
+.crow-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+  padding-right: 0.25rem;
+}
+
+.crow-title {
+  font-size: var(--t-20);
+  font-weight: 600;
+  letter-spacing: var(--ls-md);
+}
+
+.crow-count {
+  font-size: var(--t-11);
+  font-weight: 600;
+  color: var(--tx-3);
+  padding: 0.1rem 0.4rem;
+  border-radius: 6px;
+  background: var(--e2);
+}
+
+.crow-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-left: auto;
+}
+
+
+.crow-nav {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--e2);
+  color: var(--tx);
+  transition:
+    background var(--d-quick) var(--ease-out),
+    color var(--d-quick) var(--ease-out),
+    opacity var(--d-quick) var(--ease-out);
+}
+
+.crow-nav:hover:not(:disabled) {
+  background: var(--e3);
+  color: var(--tx);
+}
+
+
+.crow-nav:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.crow-all {
+  margin-left: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--r-sm);
+  font-size: var(--t-13);
+  font-weight: 500;
+  color: var(--tx-2);
+  transition: background var(--d-quick) var(--ease-out), color var(--d-quick) var(--ease-out);
+}
+
+.crow-all:hover {
+  background: var(--e2);
+  color: var(--tx);
+}
+
+
+.crow-scroller {
+  display: flex;
+  gap: var(--crow-gap, 1rem);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 0.35rem;
+
+
+  margin-right: -2rem;
+  padding-right: 2rem;
+}
+
+
+.crow-scroller {
+  scrollbar-width: none;
+}
+
+
+.crow-scroller {
+  --crow-gap: 1rem;
+  --crow-peek: 2.5rem;
+  --crow-cards: 4;
+}
+
+@media (max-width: 88rem) { .crow-scroller { --crow-cards: 3; } }
+@media (max-width: 66rem) { .crow-scroller { --crow-cards: 2; } }
+@media (max-width: 44rem) { .crow-scroller { --crow-cards: 1; } }
+
+.crow-item {
+  flex: 0 0 calc(
+    (100% - var(--crow-peek) - (var(--crow-cards) - 1) * var(--crow-gap))
+    / var(--crow-cards)
+  );
+  scroll-snap-align: start;
+  display: flex;
+}
+
+.crow-item > .pcard {
+  flex: 1;
+}
+
+
+.crow-fade {
+  position: absolute;
+  top: 2.6rem;
+  bottom: 0.35rem;
+  width: 3rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--d-state) var(--ease-out);
+}
+
+.crow-fade.on {
+  opacity: 1;
+}
+
+.crow-fade--l {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+
+.crow-fade--r {
+  right: -2rem;
+  background: linear-gradient(to left, var(--bg), transparent);
+}

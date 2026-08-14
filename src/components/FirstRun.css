@@ -1,0 +1,104 @@
+
+
+.fr {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 40;
+  width: min(24rem, calc(100vw - 3rem));
+  padding: 1.15rem 1.25rem 1.25rem;
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-float);
+}
+
+.fr-title {
+  font-size: var(--t-16, 1rem);
+  font-weight: 650;
+  letter-spacing: var(--ls-md);
+  line-height: var(--lh-dense);
+}
+
+.fr-lede {
+  margin-top: 0.45rem;
+  font-size: var(--t-13);
+  line-height: var(--lh-body);
+  color: var(--tx-2);
+}
+
+.fr-list {
+  margin: 0.9rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.fr-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: var(--t-13);
+  line-height: var(--lh-dense);
+  color: var(--tx-2);
+}
+
+.fr-list strong { color: var(--tx); font-weight: 600; }
+
+
+.fr-ico {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--r-sm);
+  border: 1px solid hsla(var(--kind-hsl) / 0.35);
+  background: hsla(var(--kind-hsl) / 0.12);
+  color: hsl(var(--kind-hsl));
+}
+
+.fr-foot {
+  margin-top: 0.9rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--line-soft);
+  font-size: var(--t-11);
+  color: var(--tx-4);
+  line-height: var(--lh-dense);
+}
+
+.fr-foot strong { color: var(--tx-3); font-weight: 600; }
+
+.fr-btn {
+  width: 100%;
+  margin-top: 0.85rem;
+  height: 34px;
+  border-radius: var(--r-sm);
+  border: 1px solid transparent;
+  background: var(--accent-grad);
+  color: #fff;
+  font-size: var(--t-13);
+  font-weight: 650;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 4px 14px rgba(124, 58, 237, 0.28);
+  transition: box-shadow var(--d-quick) var(--ease-out),
+              transform var(--d-micro) var(--ease-out);
+}
+
+.fr-btn:hover {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 8px 22px rgba(124, 58, 237, 0.45);
+}
+.fr-btn:active { transform: scale(0.985); }
+
+
+@media (max-width: 34rem) {
+  .fr {
+    right: 0.75rem;
+    left: 0.75rem;
+    bottom: 0.75rem;
+    width: auto;
+  }
+}

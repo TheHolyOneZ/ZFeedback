@@ -1,0 +1,159 @@
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+
+
+  background: transparent;
+  color: var(--tx);
+  font-family: var(--font-ui);
+  font-size: var(--t-14);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  overflow: hidden;
+}
+
+
+.selectable,
+input,
+textarea {
+  -webkit-user-select: text;
+  user-select: text;
+  cursor: text;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: 600;
+  line-height: var(--lh-head);
+}
+h1 { font-size: var(--t-40); letter-spacing: var(--ls-lg); }
+h2 { font-size: var(--t-28); letter-spacing: var(--ls-lg); }
+h3 { font-size: var(--t-20); letter-spacing: var(--ls-md); }
+
+p { margin: 0; }
+
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+ul { list-style: none; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+
+:focus { outline: none; }
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--accent-glow);
+  border-radius: var(--r-sm);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-feature-settings: "liga" 1, "calt" 1;
+}
+
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+
+* {
+  scrollbar-width: thin;
+
+
+  scrollbar-color: #2f2d3a transparent;
+}
+
+
+.app-shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--r-window);
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+:root[data-maximized="true"] .app-shell {
+  border-radius: 0;
+  border-color: transparent;
+}
+
+
+.app-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(60rem 40rem at 12% -10%, rgba(124, 58, 237, 0.13), transparent 60%),
+    radial-gradient(50rem 36rem at 92% 8%,  rgba(79,  70, 229, 0.10), transparent 62%);
+  z-index: 0;
+}
+
+
+.app-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.app-body {
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+
+
+}

@@ -1,0 +1,57 @@
+{
+  "name": "zfeedback",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Browse every Z tool and file bug reports, feature requests and app requests — with a reply from a human, not a black hole.",
+  "license": "GPL-3.0-or-later",
+  "author": "TheHolyOneZ",
+  "homepage": "https://zsync.eu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheHolyOneZ/ZFeedback.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheHolyOneZ/ZFeedback/issues"
+  },
+  "keywords": [
+    "tauri",
+    "rust",
+    "react",
+    "typescript",
+    "desktop-app",
+    "bug-tracker",
+    "feedback",
+    "issue-tracker",
+    "feature-requests",
+    "privacy",
+    "offline-first",
+    "no-telemetry",
+    "linux",
+    "windows"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-opener": "^2",
+    "clsx": "^2.1.1",
+    "motion": "^13.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "typescript": "~5.8.3",
+    "vite": "^7.0.4"
+  }
+}

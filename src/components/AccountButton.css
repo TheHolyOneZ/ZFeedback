@@ -1,0 +1,135 @@
+.acct-wrap {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.acct {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.6rem 0.35rem 0.35rem;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--e1);
+  color: var(--tx-2);
+  font-size: var(--t-13);
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background var(--d-quick) var(--ease-out),
+    color var(--d-quick) var(--ease-out),
+    transform var(--d-micro) var(--ease-out);
+}
+
+.acct:hover {
+  background: var(--e2);
+  color: var(--tx);
+  transform: translateY(-1px);
+}
+
+.acct:active {
+  transform: scale(0.97);
+}
+
+
+.acct--out {
+  padding: 0.42rem 0.9rem;
+  background: var(--accent-grad);
+  border-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+
+.acct--out:hover {
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.38);
+}
+
+.acct-av {
+  width: 22px;
+  height: 22px;
+  border-radius: 7px;
+  object-fit: cover;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.acct-av--fallback {
+  background: var(--accent-grad);
+  color: #fff;
+  font-size: var(--t-11);
+  font-weight: 600;
+}
+
+.acct-name {
+  max-width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.acct-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--warn);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+}
+
+
+.acct-away {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+}
+
+.acct-menu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  right: 0;
+  z-index: 31;
+  min-width: 12rem;
+  padding: 0.35rem;
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-float);
+}
+
+.acct-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--r-sm);
+  color: var(--tx);
+  font-size: var(--t-13);
+  font-weight: 500;
+  text-align: left;
+  transition: background var(--d-quick) var(--ease-out);
+}
+
+.acct-item:hover {
+  background: var(--e2);
+}
+
+.acct-item--quiet {
+  color: var(--tx-2);
+}
+
+.acct-badge {
+  margin-left: auto;
+  min-width: 1.15rem;
+  padding: 0.05rem 0.3rem;
+  border-radius: 5px;
+  background: var(--warn);
+  color: #0b0b0f;
+  font-size: var(--t-10);
+  font-weight: 700;
+  text-align: center;
+}
+
+.acct-sep {
+  height: 1px;
+  margin: 0.3rem 0.15rem;
+  background: var(--line-soft);
+}

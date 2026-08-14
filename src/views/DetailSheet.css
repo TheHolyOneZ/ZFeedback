@@ -1,0 +1,190 @@
+.dsheet-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 3rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .dsheet-scrim {
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+}
+
+.dsheet {
+  position: relative;
+  width: 100%;
+  max-width: 40rem;
+  max-height: 100%;
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-float), 0 0 80px -30px var(--d-glow, transparent);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.dsheet:focus {
+  outline: none;
+}
+
+
+.dsheet-wash {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(30rem 16rem at 0% 0%, var(--d-from), transparent 62%),
+    radial-gradient(26rem 14rem at 100% 0%, var(--d-to), transparent 60%);
+  opacity: 0.16;
+}
+
+.dsheet-body {
+  position: relative;
+  padding: 1.9rem 2rem 2rem;
+
+
+}
+
+
+.dsheet-close {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--r-sm);
+  color: var(--tx-3);
+  transition: background var(--d-quick) var(--ease-out), color var(--d-quick) var(--ease-out);
+}
+
+.dsheet-close:hover {
+  background: var(--e2);
+  color: var(--tx);
+}
+
+
+.dsheet-head {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  margin-bottom: 1.25rem;
+  padding-right: 2rem;
+}
+
+.dsheet-head .identity-mark {
+  flex: 0 0 auto;
+  border-radius: 26%;
+  box-shadow: 0 10px 28px var(--d-glow, transparent), 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dsheet-cat {
+  display: block;
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tx-3);
+}
+
+.dsheet-title {
+  margin-top: 0.2rem;
+  font-size: var(--t-28);
+  font-weight: 600;
+  letter-spacing: var(--ls-lg);
+}
+
+.dsheet-counts {
+  margin-top: 0.3rem;
+  font-size: var(--t-13);
+  color: var(--tx-3);
+}
+
+
+.dsheet-desc {
+  font-size: var(--t-14);
+  line-height: var(--lh-body);
+  color: var(--tx-2);
+  margin-bottom: 1.5rem;
+}
+
+
+.dsheet-section + .dsheet-section {
+  margin-top: 1.4rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line-soft);
+}
+
+.dsheet-label {
+  font-size: var(--t-11);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tx-3);
+  margin-bottom: 0.7rem;
+}
+
+.dsheet-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.dsheet-note {
+  margin-top: 0.7rem;
+  font-size: var(--t-11);
+  color: var(--tx-4);
+}
+
+
+.dbtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: var(--e2);
+  color: var(--tx-2);
+  font-size: var(--t-13);
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    background var(--d-quick) var(--ease-out),
+    color var(--d-quick) var(--ease-out),
+    transform var(--d-micro) var(--ease-out),
+    box-shadow var(--d-quick) var(--ease-out);
+}
+
+.dbtn:hover {
+  background: var(--e3);
+  color: var(--tx);
+  transform: translateY(-1px);
+}
+
+.dbtn:active {
+  transform: scale(0.97);
+}
+
+.dbtn--primary {
+  background: var(--accent-grad);
+  border-color: transparent;
+  color: #fff;
+}
+
+.dbtn--primary:hover {
+  color: #fff;
+  box-shadow: 0 8px 22px rgba(124, 58, 237, 0.4);
+}
+
+@media (max-width: 40rem) {
+  .dsheet-scrim { padding: 1.5rem 1rem; }
+  .dsheet-body  { padding: 1.5rem 1.25rem; }
+  .dsheet-head  { flex-direction: column; align-items: flex-start; gap: 0.85rem; }
+}

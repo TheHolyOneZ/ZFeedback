@@ -1,0 +1,225 @@
+.pcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.15rem;
+  border-radius: var(--r-lg);
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 0;
+}
+
+
+.pcard::after {
+  content: "";
+  position: absolute;
+  inset: -40% 50% 50% -40%;
+  background: radial-gradient(circle, var(--mark-glow, transparent), transparent 70%);
+  opacity: 0;
+  transition: opacity var(--d-state) var(--ease-out);
+  pointer-events: none;
+}
+
+.pcard:hover::after {
+  opacity: 1;
+}
+
+.pcard:hover {
+  background: var(--e2);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.pcard:focus-visible {
+  box-shadow: var(--sh-card), 0 0 0 4px var(--accent-glow);
+}
+
+
+.pcard-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.identity-mark {
+  flex: 0 0 auto;
+  border-radius: 28%;
+  box-shadow: 0 4px 14px var(--mark-glow, transparent),
+              0 1px 2px rgba(0, 0, 0, 0.5);
+  transition: transform var(--d-state) var(--ease-out);
+}
+
+.pcard:hover .identity-mark {
+  transform: scale(1.04) rotate(-1.5deg);
+}
+
+.pcard-heading {
+  min-width: 0;
+}
+
+.pcard-title {
+  font-size: var(--t-16);
+  font-weight: 600;
+  letter-spacing: var(--ls-md);
+  color: var(--tx);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pcard-cat {
+  display: inline-block;
+  margin-top: 0.15rem;
+  font-size: var(--t-11);
+  font-weight: 500;
+  color: var(--tx-3);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+
+.pcard-desc {
+  font-size: var(--t-13);
+  line-height: var(--lh-dense);
+  color: var(--tx-2);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex: 1;
+}
+
+.pcard--compact .pcard-desc {
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+
+.pcard-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  min-width: 0;
+}
+
+.pcard-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 34px;
+  padding: 0 0.9rem;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--e2);
+  color: var(--tx-2);
+
+  font-size: var(--t-13);
+  font-weight: 550;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition:
+    background var(--d-quick) var(--ease-out),
+    border-color var(--d-quick) var(--ease-out),
+    color var(--d-quick) var(--ease-out),
+    box-shadow var(--d-quick) var(--ease-out),
+    transform var(--d-micro) var(--ease-out);
+}
+
+.pcard-btn:hover {
+  background: var(--e3);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--tx);
+}
+
+.pcard-btn:active {
+  transform: scale(0.97);
+}
+
+
+.pcard-btn--primary {
+  position: relative;
+  border-color: transparent;
+  background: var(--accent-grad);
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 4px 14px rgba(124, 58, 237, 0.28);
+}
+
+.pcard-btn--primary:hover {
+  color: #fff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 8px 22px rgba(124, 58, 237, 0.45);
+}
+
+
+.pcard-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--e1);
+  color: var(--tx-3);
+  transition:
+    background var(--d-quick) var(--ease-out),
+    border-color var(--d-quick) var(--ease-out),
+    color var(--d-quick) var(--ease-out),
+    transform var(--d-micro) var(--ease-out);
+}
+
+.pcard-icon:hover {
+  background: var(--e3);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--tx);
+}
+
+.pcard-icon:active {
+  transform: scale(0.94);
+}
+
+
+.pcard-btn--open {
+  border-color: rgba(139, 92, 246, 0.42);
+  background: rgba(124, 58, 237, 0.1);
+  color: #cbb6fb;
+  font-weight: 600;
+}
+
+.pcard-btn--open:hover {
+  border-color: rgba(139, 92, 246, 0.75);
+  background: rgba(124, 58, 237, 0.2);
+  color: #e4dbff;
+}
+
+
+.pcard-btn--open::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M4 1.5H1.5v7h7V6M6 1.5h2.5V4M8.5 1.5L4.5 5.5' fill='none' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M4 1.5H1.5v7h7V6M6 1.5h2.5V4M8.5 1.5L4.5 5.5' fill='none' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+
+.pcard-btn.kind-download::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1v6M2.5 5L5 7.5 7.5 5M1.5 9h7' fill='none' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M5 1v6M2.5 5L5 7.5 7.5 5M1.5 9h7' fill='none' stroke='%23000' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}

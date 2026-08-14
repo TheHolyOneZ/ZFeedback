@@ -1,0 +1,19 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Main window. Deliberately NOT opener:default — that set also grants reveal-item-in-dir, which the app never calls and which would let anything running in the webview pop a file manager at an arbitrary path. allow-open-url plus allow-default-urls is what openExternal() actually needs, and allow-default-urls is the scope confining it to http/https/mailto/tel IN RUST. The regex in catalogue.ts is a convenience, not the boundary: devtools can call invoke() directly, so this file is the only thing that really constrains the IPC surface. open_path is granted nowhere, so the webview can never launch a local file.",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+
+    "opener:allow-open-url",
+    "opener:allow-default-urls",
+
+    "core:window:allow-minimize",
+    "core:window:allow-maximize",
+    "core:window:allow-unmaximize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-close",
+    "core:window:allow-start-dragging"
+  ]
+}

@@ -1,0 +1,25 @@
+.storefront {
+  max-width: 82rem;
+  margin: 0 auto;
+  padding: 2.25rem 2rem 4rem;
+}
+
+.sf-head {
+  margin-bottom: 1.75rem;
+}
+
+.sf-title {
+  font-size: var(--t-40);
+  font-weight: 600;
+  letter-spacing: var(--ls-lg);
+}
+
+.sf-sub {
+  margin-top: 0.35rem;
+  color: var(--tx-2);
+  font-size: var(--t-14);
+}
+
+.sf-stale {
+  color: var(--warn);
+}

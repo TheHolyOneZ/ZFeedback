@@ -1,0 +1,121 @@
+
+
+.wm {
+  display: block;
+  white-space: pre-wrap;
+}
+
+
+.wm-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.wm-line--badge { gap: 0.28em; }
+
+.wm-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+.wm-word {
+  display: inline-block;
+  white-space: pre;
+}
+
+.wm-c {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, opacity, filter;
+}
+
+
+.wm-accent {
+  background-image: linear-gradient(
+    100deg,
+    #a78bfa 0%, #6366f1 18%, #c4b5fd 34%, #7c3aed 50%,
+    #c4b5fd 66%, #6366f1 82%, #a78bfa 100%
+  );
+  background-size: 6em 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: wm-flow 7s linear infinite;
+}
+
+@keyframes wm-flow {
+  from { background-position: 0 0; }
+  to   { background-position: -6em 0; }
+}
+
+
+.wm-badge {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 1.05em;
+  height: 1.05em;
+  border-radius: 0.24em;
+  overflow: hidden;
+
+  margin-top: -0.06em;
+  box-shadow:
+    0 0 0 1px rgba(167, 139, 250, 0.28),
+    0 8px 26px rgba(124, 58, 237, 0.4);
+  animation: wm-breathe 6s ease-in-out infinite;
+}
+
+
+.wm-badge-fill {
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(
+    from 0deg,
+    #4f46e5, #7c3aed, #a78bfa, #6366f1, #4f46e5
+  );
+  animation: wm-spin 11s linear infinite;
+}
+
+.wm-badge-text {
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+
+
+  font-size: 0.68em;
+  line-height: 1;
+  letter-spacing: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes wm-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wm-breathe {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(167,139,250,.28), 0 8px 26px rgba(124,58,237,.4);
+  }
+  50% {
+    box-shadow: 0 0 0 1px rgba(167,139,250,.45), 0 10px 34px rgba(124,58,237,.6);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .wm-accent,
+  .wm-badge,
+  .wm-badge-fill { animation: none; }
+  .wm-c { will-change: auto; }
+}

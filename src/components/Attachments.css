@@ -1,0 +1,140 @@
+
+
+.att-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.6rem;
+}
+
+.att-thumb {
+  position: relative;
+  width: 104px;
+  height: 78px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line);
+  background: rgba(0, 0, 0, 0.3);
+  transition:
+    border-color var(--d-quick) var(--ease-out),
+    transform var(--d-micro) var(--ease-out);
+}
+
+.att-thumb:hover:not(:disabled) {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.att-thumb:active:not(:disabled) { transform: scale(0.98); }
+
+.att-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.att-thumb--gone {
+  display: grid;
+  place-items: center;
+  font-size: var(--t-10);
+  color: var(--tx-4);
+  border-style: dashed;
+}
+
+.att-shimmer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(60deg, var(--e1) 0%, var(--e2) 45%, var(--e1) 90%);
+  background-size: 220% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+
+.att-box {
+  position: absolute;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 2.5rem;
+  background: rgba(0, 0, 0, 0.86);
+}
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .att-box { -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+}
+
+.att-box img {
+  max-width: 100%;
+  max-height: calc(100% - 3rem);
+  object-fit: contain;
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-float);
+}
+
+.att-box-meta {
+  font-size: var(--t-11);
+  color: var(--tx-2);
+}
+.att-box-meta span { color: var(--tx-4); margin-left: 0.4rem; }
+
+
+.att-drop {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.7rem;
+  padding: 0.6rem 0.7rem;
+  border-radius: var(--r-md);
+  border: 1px dashed var(--line);
+  transition:
+    border-color var(--d-quick) var(--ease-out),
+    background var(--d-quick) var(--ease-out);
+}
+
+
+.att-drop.over {
+  border-color: var(--accent);
+  border-style: solid;
+  background: rgba(124, 58, 237, 0.08);
+}
+
+.att-drop.full { border-style: solid; opacity: 0.75; }
+
+.att-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 0 0 auto;
+  padding: 0.36rem 0.7rem;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--line);
+  background: var(--e2);
+  color: var(--tx-2);
+  font-size: var(--t-11);
+  font-weight: 600;
+  transition:
+    background var(--d-quick) var(--ease-out),
+    color var(--d-quick) var(--ease-out);
+}
+.att-add:hover:not(:disabled) { background: var(--e3); color: var(--tx); }
+.att-add:disabled { opacity: 0.55; cursor: default; }
+
+.att-hint {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--t-11);
+  line-height: var(--lh-dense);
+  color: var(--tx-4);
+}
+
+.att-err {
+  flex: 1 0 100%;
+  font-size: var(--t-11);
+  color: var(--err);
+}

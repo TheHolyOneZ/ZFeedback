@@ -1,0 +1,56 @@
+
+
+.lx {
+  position: absolute;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+
+
+  background: #0b0b0f;
+}
+
+
+.lx-bloom {
+  position: absolute;
+  width: 46rem;
+  height: 46rem;
+  border-radius: 999px;
+  background:
+    radial-gradient(closest-side, rgba(124, 58, 237, 0.28), transparent 70%),
+    radial-gradient(closest-side, rgba(79, 70, 229, 0.16), transparent 78%);
+  filter: blur(28px);
+  pointer-events: none;
+}
+
+.lx-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.lx-mark {
+  width: 86px;
+  height: 86px;
+
+
+  filter: drop-shadow(0 4px 26px rgba(124, 58, 237, 0.55));
+}
+
+.lx-word {
+  font-size: var(--t-11);
+  font-weight: 650;
+  color: var(--tx-3);
+
+  text-transform: none;
+  white-space: nowrap;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .lx { display: none; }
+}
