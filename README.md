@@ -22,11 +22,11 @@ without an account, an email address, or a browser tab.
 
 ## What it is
 
-Most bug trackers assume the project has a public GitHub repository. Around 30 of
-the 50 tools in the Z catalogue don't have one — so until now there was simply no
-way for anyone to report a problem with them.
+Fifty tools spread across fifty repositories, release pages and issue trackers is
+fifty places to look. ZFeedback is all of it in one window — one catalogue, one
+place to report something, one place to see what happened next.
 
-ZFeedback is that missing piece. It's two things in one window:
+It's two things at once:
 
 - **A storefront.** Browse all 50 tools by category, search them, read what each
   one does, and open the download in your real browser.
